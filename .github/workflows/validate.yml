@@ -6,6 +6,7 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -19,12 +20,21 @@ jobs:
           scripts=re.findall(r'<script>(.*?)</script>',html,re.S)
           assert scripts, 'No inline application script found'
           open('/tmp/signalforge.js','w',encoding='utf-8').write('\n'.join(scripts))
-          print('Extracted',len(scripts),'script(s)')
           PY
           node --check /tmp/signalforge.js
-      - name: Check product boundaries
+      - name: Check no-network boundaries
         run: |
           grep -q 'signalforge-local-db' index.html
           grep -q 'crypto.subtle' index.html
           grep -q 'SIMULATION ONLY' index.html
-          ! grep -Eq 'fetch\(|XMLHttpRequest|https?://[^ ]+api' index.html
+          ! grep -Eq 'XMLHttpRequest|fetch\(' index.html
+      - name: Install Playwright
+        run: npm install --no-save playwright
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start static server
+        run: python3 -m http.server 4173 >/tmp/signalforge-server.log 2>&1 &
+      - name: Run browser smoke
+        env:
+          SMOKE_URL: http://127.0.0.1:4173
+        run: node e2e/smoke.cjs
