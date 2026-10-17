@@ -1,4 +1,6 @@
 const { chromium } = require('playwright');
+const fs = require('node:fs');
+fs.mkdirSync('artifacts/screenshots', { recursive: true });
 (async()=>{
  const browser=await chromium.launch({headless:true});
  const context=await browser.newContext({acceptDownloads:true});
@@ -10,12 +12,14 @@ const { chromium } = require('playwright');
  await page.waitForSelector('#stats .stat');
  if(await page.locator('#stats .stat').count()!==4)throw Error('Dashboard metrics missing');
  if(await page.locator('#endpointCards .panel').count()===0)throw Error('Demo endpoints missing');
+ await page.screenshot({path:'artifacts/screenshots/01-dashboard.png',fullPage:true});
  await page.click('[data-view="replay"]');
  await page.selectOption('#replayProfile','rate-limit');
  await page.click('#runReplay');
  await page.waitForSelector('#replayTimeline .eventrow');
  const timeline=await page.locator('#replayTimeline').innerText();
  if(!timeline.includes('429')||!timeline.includes('Delivered successfully'))throw Error('Rate-limit retry scenario did not recover');
+ await page.screenshot({path:'artifacts/screenshots/02-replay-lab.png',fullPage:true});
  await page.click('[data-view="signatures"]');
  await page.click('#generateSignature');
  await page.waitForSelector('#signatureOutput:not(.hidden)');
