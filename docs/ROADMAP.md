@@ -1,12 +1,21 @@
-# Roadmap
+# Roadmap — SignalForge
 
-## Current
-Local event ledger, endpoint profiles, chaos replay, attempt timeline, HMAC-SHA256 signing/verification, timestamp tolerance, insights, JSON backup/restore, CSV and Markdown exports, IndexedDB persistence.
+## v1.1 (current)
+- Idempotency lab for repeated deliveries and receiver dedupe strategies
+- Contract diff lab for nested JSON payload drift
+- Persistent experiment/comparison history
+- CSV and Markdown exports
+- Persistence safety fix: central save helper writes IndexedDB and localStorage mirror
+- Expanded browser smoke tests
 
-## Next
-1. Add event schema templates and idempotency-key comparison.
-2. Add configurable retry-after handling and dead-letter queue views.
-3. Add deterministic random seeds for replay reproducibility.
-4. Add browser-side diff of payload versions.
-5. Optional production adapter layer for real HTTP delivery with explicit opt-in and safe URL allowlist.
-6. If hosted multi-user storage is needed, introduce a first-party backend/database and auth; do not imply IndexedDB is server storage.
+## Next logical buyer extensions
+1. Real local receiver harness on localhost with explicit opt-in and SSRF protections
+2. JSON Schema import and schema compatibility rules
+3. OpenAPI/event catalog import
+4. Signed, reproducible test-case bundles
+5. GitHub Actions adapter to run contract fixtures in CI
+6. Hosted team workspaces, access control, and shared audit history
+7. Integrations for Stripe-like, commerce, and internal event providers
+
+## Out of scope for the local-only release
+No real email, no production endpoint delivery, no hosted database, no API keys, no team accounts.
