@@ -41,3 +41,6 @@ Delivery and receiver behavior are simulated; endpoint URLs are not contacted. W
 - Listed asking price: $2,900.
 - Faster-sale negotiation range: approximately $1,500–$2,000, depending on buyer diligence and transfer terms.
 - These are seller positioning suggestions, not a valuation or guaranteed offer.
+
+## Why you're moving on
+I’m focusing on other projects and don’t have the time to continue developing and commercializing SignalForge. I’m looking to pass it on to a new owner who can build on the existing foundation, expand its features, and bring it to market.
