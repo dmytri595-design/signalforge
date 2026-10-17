@@ -2,8 +2,8 @@
 
 ## Release status
 - Branch: main
-- Release commit: c8f72890559600495b4e0f6b2c36ba702e0f37e8
-- Validation workflow: https://github.com/dmytri595-design/signalforge/actions/runs/39018013609
+- Release validation: latest successful run 39018066546 (check the linked run for the exact tested commit)
+- Validation workflow: https://github.com/dmytri595-design/signalforge/actions/runs/39018066546
 - Result: SUCCESS
 
 ## Automated validation
