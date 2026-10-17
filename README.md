@@ -1,23 +1,25 @@
 # SignalForge — Webhook Reliability Lab
 
-SignalForge is a local-first testing workbench for teams building webhook consumers and event-driven integrations. It gives developers a repeatable place to exercise retry behavior, rate limits, replay, and HMAC signature handling before production.
+**Break the webhook happy path before production does.**
 
-## Features
-- Local event ledger with search and filters
-- Endpoint profiles, retry limits and backoff policies
-- Chaos/replay lab for healthy, flaky, 429, 500, timeout and invalid-signature scenarios
-- Attempt timelines and persistent experiment history
-- Native Web Crypto HMAC-SHA256 signing/verification and timestamp tolerance
-- Delivery health dashboard, endpoint comparisons, failure matrix
-- Workspace JSON backup/restore, CSV export, Markdown reliability report
-- IndexedDB local database with localStorage fallback
-- No external API calls, trackers, third-party runtime libraries or credentials
+SignalForge is a local-first testing workbench for teams building webhook consumers and event-driven integrations. It makes transient failures, retries, duplicate delivery, signature validation, and payload contract drift repeatable without standing up a test backend.
+
+## Feature set
+- **Event ledger:** searchable event stream, endpoint/status/type filters, payload inspection, CSV export, and activity history.
+- **Endpoint profiles:** configure simulated receiver behavior, retry budget, backoff, and HMAC demo secrets.
+- **Chaos/replay lab:** healthy, flaky 503, 429 rate limit, persistent 500, timeout, and invalid-signature scenarios; attempt timelines and experiment history.
+- **Idempotency lab:** model repeated deliveries with key-based, payload-fingerprint, or no-deduplication receiver strategies; compare accepted vs suppressed deliveries and export runs.
+- **Contract diff lab:** recursively compare JSON payloads, flag removed fields and type changes as potentially breaking, identify added paths, and export Markdown reports.
+- **HMAC studio:** native Web Crypto HMAC-SHA256 generation/verification, raw-body tamper checks, and timestamp tolerance.
+- **Insights:** delivery success, retry overhead, endpoint comparison, failure fingerprints, and actionable test checklist.
+- **Workspace data:** IndexedDB persistence with localStorage fallback, JSON backup/restore, CSV exports, and Markdown reports.
+- **Private by default:** no external runtime dependencies, API keys, tracking, or network calls.
 
 ## Run
-Open `index.html` in a modern browser or serve this repository as a static site.
+Open index.html in a modern browser or serve this repository as a static site. No build step is required.
 
-## Boundaries
-Delivery is simulated; endpoint URLs are labels and are never contacted. Data stays in the browser profile unless exported. This is not a hosted multi-user database or production webhook gateway. Do not use production secrets in the demo.
+## Important boundaries
+Delivery and receiver behavior are simulated; endpoint URLs are labels and are never contacted. Data stays in the browser profile unless exported. The contract diff is a structural heuristic, not a substitute for consumer contract tests. The idempotency lab models receiver behavior and does not provide a durable production dedupe store. This is not a hosted multi-user database or production webhook gateway. Never use production secrets in the demo.
 
-## Stack
-Vanilla HTML/CSS/JavaScript, IndexedDB, localStorage, Web Crypto, Blob/File APIs. No build step.
+## Status
+Functional local-first developer tool / pre-launch / pre-revenue. No customers or revenue are claimed.

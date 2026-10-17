@@ -4,10 +4,10 @@
 
 **Short pitch:** Break the webhook happy path before production does.
 
-**Description:** SignalForge is a zero-setup, browser-local reliability workbench for teams building webhook consumers. Create event fixtures, configure endpoint behavior, simulate flaky receivers, 429s, 500s, timeouts and invalid signatures, inspect retry timelines, test HMAC-SHA256 signatures, compare endpoint reliability, and export reproducible reports. It runs without API keys, external services or network calls and keeps the workspace in IndexedDB.
+**Description:** SignalForge is a zero-setup, browser-local reliability workbench for teams building webhook consumers. Create event fixtures, configure simulated receiver profiles, exercise flaky 503s, 429s, 500s, timeouts and invalid signatures, inspect retry timelines, test HMAC-SHA256 signatures, model duplicate-delivery/idempotency behavior, and compare nested JSON payload versions for potentially breaking contract drift. Persist experiment history and export JSON, CSV and Markdown reports. It runs without API keys, external services or network calls and keeps the workspace in IndexedDB with a localStorage fallback.
 
-**Problem solved:** Webhook retry and signature edge cases are easy to miss in happy-path tests and expensive to reproduce after release. SignalForge gives developers and QA a repeatable local lab for those failure modes.
+**Problem solved:** Webhook retry, duplicate-delivery, signature and payload-contract edge cases are easy to miss in happy-path tests and expensive to reproduce after release. SignalForge provides a repeatable local lab for those failure modes.
 
-**Status:** Functional local-first prototype / pre-launch / no revenue claims.
+**Status:** Functional local-first developer tool / pre-launch / no revenue claims.
 
-**Honest limitation:** Delivery is simulated; endpoint URLs are not contacted. The database is browser-local, not a hosted multi-user database.
+**Honest limitation:** Delivery is simulated; endpoint URLs are not contacted. The database is browser-local, not a hosted multi-user database. Idempotency and contract checks are models/heuristics, not production guarantees.
