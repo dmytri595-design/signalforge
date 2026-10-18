@@ -15,6 +15,12 @@ SignalForge is a local-first testing workbench for teams building webhook consum
 - **Workspace data:** IndexedDB persistence with localStorage fallback, JSON backup/restore, CSV exports, and Markdown reports.
 - **Private by default:** no external runtime dependencies, API keys, tracking, or network calls.
 
+## Live demo
+- **Vercel:** https://signalforge-brown.vercel.app
+- **Source:** https://github.com/dmytri595-design/signalforge
+
+The hosted site is a static snapshot of the tested `main` source revision. GitHub-to-Vercel automatic redeploys are not connected yet; changes pushed to GitHub need a manual redeploy until that integration is linked.
+
 ## Run
 Open index.html in a modern browser or serve this repository as a static site. No build step is required.
 

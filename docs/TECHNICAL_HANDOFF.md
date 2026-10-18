@@ -1,5 +1,11 @@
 # Technical handoff — SignalForge v1.1
 
+## Current hosted demo
+- URL: https://signalforge-brown.vercel.app
+- Source snapshot: `5bec74779abf5c50eac5fb2522e359434b4bb015`
+- Vercel reports the deployment state as `READY`.
+- The current deployment was uploaded as a static file snapshot; GitHub automatic redeploy is not connected yet. Connect the Vercel project to this repository before relying on pushes to publish updates.
+
 ## Runtime
 - Single-page static HTML/CSS/JavaScript app, no build step
 - Browser APIs: IndexedDB, localStorage, Web Crypto, Blob/File APIs

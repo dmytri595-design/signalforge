@@ -18,6 +18,6 @@
 
 **Repository:** https://github.com/dmytri595-design/signalforge
 
-**Demo:** No verified hosted demo URL is documented. The app runs from index.html in a modern browser or from a static server. Do not invent a live-demo URL.
+**Live demo:** https://signalforge-brown.vercel.app (Vercel production alias; deployment status reports READY). The app is a static snapshot of the tested source. GitHub-to-Vercel auto-deploy is not linked yet, so new code requires a manual redeploy. Before sharing the listing, open the demo in a normal browser to confirm public access.
 
 **Honest limitations:** Delivery is simulated; endpoint URLs are not contacted. The database is browser-local, not a hosted multi-user database. Idempotency and contract checks are models/heuristics, not production guarantees. No customers or revenue are claimed.
