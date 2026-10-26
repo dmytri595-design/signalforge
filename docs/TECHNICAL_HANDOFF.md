@@ -4,7 +4,7 @@
 - URL: https://signalforge-brown.vercel.app
 - Source snapshot: `5bec74779abf5c50eac5fb2522e359434b4bb015`
 - Vercel reports the deployment state as `READY`.
-- The current deployment was uploaded as a static file snapshot; GitHub automatic redeploy is not connected yet. Connect the Vercel project to this repository before relying on pushes to publish updates.
+- The current deployment was uploaded as a static file snapshot; GitHub automatic redeploy is not connected yet. The latest GitHub source contains v1.2 hardening and passed [Playwright/Chromium validation](https://github.com/dmytri595-design/signalforge/actions/runs/40287051017); the production alias has not yet been synchronized because the Vercel team requires one-time access approval. Do not assume GitHub pushes publish the Vercel alias.
 
 ## Runtime
 - Single-page static HTML/CSS/JavaScript app, no build step

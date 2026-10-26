@@ -42,4 +42,4 @@ All delivery/retry/receiver behavior is simulated. Endpoint URLs are labels and 
 - Scenario-matrix guard when no endpoint profiles exist.
 - Expanded Playwright regression coverage for localStorage fallback after reload, formula-like CSV cells, and identifier sanitization during workspace restore.
 
-The automated browser run for this revision is being verified in GitHub Actions before the updated source is manually synced to the Vercel production alias. Until that deployment succeeds, the Vercel alias may continue serving the older snapshot.
+The complete Playwright/Chromium browser suite passed in [GitHub Actions run 40287051017](https://github.com/dmytri595-design/signalforge/actions/runs/40287051017) on commit `97ebe27ddbed8d8f6863141b4b2d3b36511dcbb9`. The Vercel production alias still serves the older static snapshot (`5bec74779abf5c50eac5fb2522e359434b4bb015`) until a manual redeploy is authorized; Vercel access currently requires a one-time team permission approval.
