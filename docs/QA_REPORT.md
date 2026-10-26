@@ -31,3 +31,15 @@
 
 ## Scope boundaries
 All delivery/retry/receiver behavior is simulated. Endpoint URLs are labels and are never contacted. IndexedDB/localStorage are browser-local. HMAC tools are demo utilities and must not be used as a production secret vault. Contract compatibility results are structural heuristics, not a guarantee of semantic compatibility. Vercel reports the deployment as ready, but the current Vercel connector scope did not permit an external page fetch; verify the link in a normal browser before advertising it broadly.
+
+
+## v1.2 hardening — 2026-10-26
+
+- Resilient IndexedDB/localStorage fallback behavior and an explicit session-only warning when neither persistence path is available.
+- Workspace import validation: maximum 10 MB, maximum 5,000 events / 200 endpoint profiles, normalized data shapes and safe record identifiers.
+- CSV formula-like string mitigation for exported values.
+- HMAC timestamp/header validation and graceful verification errors.
+- Scenario-matrix guard when no endpoint profiles exist.
+- Expanded Playwright regression coverage for localStorage fallback after reload, formula-like CSV cells, and identifier sanitization during workspace restore.
+
+The automated browser run for this revision is being verified in GitHub Actions before the updated source is manually synced to the Vercel production alias. Until that deployment succeeds, the Vercel alias may continue serving the older snapshot.

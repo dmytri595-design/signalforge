@@ -10,16 +10,16 @@ SignalForge is a local-first testing workbench for teams building webhook consum
 - **Chaos/replay lab:** healthy, flaky 503, 429 rate limit, persistent 500, timeout, and invalid-signature scenarios; attempt timelines and experiment history.
 - **Idempotency lab:** model repeated deliveries with key-based, payload-fingerprint, or no-deduplication receiver strategies; compare accepted vs suppressed deliveries and export runs.
 - **Contract diff lab:** recursively compare JSON payloads, flag removed fields and type changes as potentially breaking, identify added paths, and export Markdown reports.
-- **HMAC studio:** native Web Crypto HMAC-SHA256 generation/verification, raw-body tamper checks, and timestamp tolerance.
+- **HMAC studio:** native Web Crypto HMAC-SHA256 generation/verification, raw-body tamper checks, strict Unix-second timestamp validation, timestamp tolerance, and signature-header format checks.
 - **Insights:** delivery success, retry overhead, endpoint comparison, failure fingerprints, and actionable test checklist.
-- **Workspace data:** IndexedDB persistence with localStorage fallback, JSON backup/restore, CSV exports, and Markdown reports.
+- **Workspace data:** IndexedDB persistence with localStorage fallback, bounded/normalized JSON backup restore, CSV exports with formula-like string protection, and Markdown reports.
 - **Private by default:** no external runtime dependencies, API keys, tracking, or network calls.
 
 ## Live demo
 - **Vercel:** https://signalforge-brown.vercel.app
 - **Source:** https://github.com/dmytri595-design/signalforge
 
-The hosted site is a static snapshot of the tested `main` source revision. GitHub-to-Vercel automatic redeploys are not connected yet; changes pushed to GitHub need a manual redeploy until that integration is linked.
+The hosted site is a static Vercel deployment, separate from GitHub Pages. It is manually redeployed after validation; pushes to GitHub do not automatically update the Vercel alias.
 
 ## Run
 Open index.html in a modern browser or serve this repository as a static site. No build step is required.
@@ -29,3 +29,6 @@ Delivery and receiver behavior are simulated; endpoint URLs are labels and are n
 
 ## Status
 Functional local-first developer tool / pre-launch / pre-revenue. No customers or revenue are claimed.
+
+## Acquisition
+See [Buyer Brief](docs/BUYER_BRIEF.md) for buyer fit, product scope, limitations, technical extension path, and transaction/IP notes. See [Sale Listing](docs/SALE_LISTING.md) for copy-ready acquisition positioning.

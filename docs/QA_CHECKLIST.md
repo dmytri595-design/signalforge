@@ -4,16 +4,20 @@
 - [ ] First visit seeds demo workspace
 - [ ] Save writes to IndexedDB and localStorage fallback mirror
 - [ ] Reload restores workspace from IndexedDB
-- [ ] IndexedDB-disabled mode uses localStorage fallback
-- [ ] Workspace JSON backup downloads and restores
+- [x] IndexedDB-disabled mode uses localStorage fallback
+- [x] Workspace JSON backup downloads and restores
+- [x] Oversized workspace backup is rejected before parsing
+- [x] Malformed/missing optional collections are normalized after valid workspace import
 - [ ] Clear/reset initializes every feature history collection
 - [ ] Search and status/endpoint/type filters compose
 
 ## Event and endpoint workflow
 - [ ] Create event validates JSON object payload
 - [ ] Add/edit/delete endpoint profiles work without deleting event history
-- [ ] CSV and Markdown exports download
-- [ ] Event details escape untrusted payload strings before rendering
+- [x] CSV and Markdown exports download
+- [x] Formula-like string cells are neutralized in CSV export
+- [x] Event details escape untrusted payload strings before rendering
+- [x] Imported identifiers are normalized before entering HTML attributes
 
 ## Replay lab
 - [ ] Healthy replay succeeds on first attempt
@@ -38,7 +42,8 @@
 - [ ] Markdown report downloads
 
 ## Signature studio / privacy
-- [ ] HMAC signature generation returns sha256 header
+- [x] HMAC signature generation returns sha256 header
+- [x] Empty secret and malformed/non-integer timestamps are rejected
 - [ ] Valid signature verifies; tampered body fails
 - [ ] Timestamp outside tolerance is rejected
 - [ ] Core functionality makes no external network calls

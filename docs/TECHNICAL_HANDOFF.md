@@ -26,6 +26,13 @@
 - Recursive JSON shape diff: additions, removals, and type changes
 - Endpoint and workspace reports in CSV, Markdown and JSON formats
 
+## Reliability safeguards in v1.2
+- IndexedDB writes no longer depend on the localStorage mirror succeeding; if IndexedDB transactions fail, persistence degrades to localStorage where available.
+- Workspace import is size-bounded and normalizes settings, endpoints, events and history collections before rendering.
+- Endpoint/event identifiers are normalized to safe characters before they are used in HTML attributes.
+- CSV string cells beginning with formula-triggering characters are prefixed with an apostrophe; numeric values remain numeric text.
+- HMAC generation/verification requires a non-empty secret, a positive integer Unix timestamp, a correctly shaped sha256 signature header and a timestamp within the configured tolerance.
+
 ## Integration seams for a buyer
 - Replace simulated receiver with a controlled HTTP test harness behind explicit opt-in
 - Add real receiver credentials only in a server-side secret store

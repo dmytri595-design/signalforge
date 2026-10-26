@@ -17,7 +17,7 @@ Webhook integrations often fail in edge cases that happy-path tests miss: retrie
 ## Repository / Demo Link
 Repository: https://github.com/dmytri595-design/signalforge
 
-Hosted demo: No verified hosted demo URL is currently documented. The app can be launched by opening index.html in a modern browser or serving the repository as a static site. Do not submit a guessed demo URL.
+Hosted demo: https://signalforge-brown.vercel.app (Vercel production alias; manually deployed static snapshot). The hosted snapshot must be redeployed after code changes; GitHub pushes do not automatically update this alias. Repository source and documentation: https://github.com/dmytri595-design/signalforge.
 
 ## Users
 0 claimed / pre-launch
