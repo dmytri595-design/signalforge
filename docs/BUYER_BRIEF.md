@@ -66,7 +66,7 @@ The current seller-prepared listing suggests an initial asking price of **USD 2,
 
 ## IP / transaction scope
 
-The repository currently has no top-level LICENSE file. That fact is not a substitute for legal review or a complete chain-of-title audit. Before any sale, define the assets and rights covered by the transaction (source code, product name/brand, documentation, test fixtures, deployment snapshot and any future unpublished work), disclose third-party/open-source components used in development or CI, and use a written agreement reviewed by qualified counsel.
+The top-level LICENSE is a restrictive evaluation notice, not an open-source grant. Commercial/production use, sublicensing, derivative works, or a transfer of rights requires a separate written agreement. That notice is not a substitute for legal review or a complete chain-of-title audit. Before any sale, define the assets and rights covered by the transaction (source code, product name/brand, documentation, test fixtures, deployment snapshot and any future unpublished work), disclose third-party/open-source components used in development or CI, and use a written agreement reviewed by qualified counsel.
 
 ## Best-fit buyer
 
